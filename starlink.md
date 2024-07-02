@@ -1,4 +1,24 @@
+## IPv6 prefix delegation in NetworkManager
+```
+sysctl net.ipv6.conf.all.autoconf
+1
+```
+
+Starlink interface
+```
+set ipv6.method auto
+```
+
+Internal interface
+```
+set ipv6.method shared
+```
+
+networkmanager makes prefix delegation request on one interface and shares it with the other interface
+
+
 ## Congestion control
+Use on client system
 ```
 # (applies to ipv6 also, just exposed through ipv4 tree)
 sudo sysctl -w net.ipv4.tcp_congestion_control=bbr
